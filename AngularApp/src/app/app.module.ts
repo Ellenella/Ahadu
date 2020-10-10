@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { StudentloginComponent } from './student/studentlogin/studentlogin.component';
 import { StudentregisterComponent } from './student/studentregister/studentregister.component';
 import { StudenthomeComponent } from './student/studenthome/studenthome.component';
+import {RouterModule } from '@angular/router';
+import {appRoutes } from './routes';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { StudenthomeComponent } from './student/studenthome/studenthome.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
