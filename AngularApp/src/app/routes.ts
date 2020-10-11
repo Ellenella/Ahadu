@@ -3,6 +3,9 @@ import { StudentregisterComponent } from './student/studentregister/studentregis
 import { StudentloginComponent } from './student/studentlogin/studentlogin.component';
 import { StudenthomeComponent } from './student/studenthome/studenthome.component';
 
+import { SelectQuTypeComponent } from './student/select-qu-type/select-qu-type.component';
+import { SelectViewResourseComponent } from './student/select-view-resourse/select-view-resourse.component';
+
 
 
 export const appRoutes : Routes = [
@@ -19,6 +22,15 @@ export const appRoutes : Routes = [
             path : "home" , component : StudenthomeComponent,
            // children : [{path : '' , component : RegistorComponent }]
         },
+        {
+            path : "quasion" , component : SelectQuTypeComponent,
+           // children : [{path : '' , component : RegistorComponent }]
+        },
+        {
+            path : "seresourse" , component : SelectViewResourseComponent,
+           // children : [{path : '' , component : RegistorComponent }]
+        },
+    
     
 
     {

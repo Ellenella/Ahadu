@@ -10,6 +10,9 @@ import { StudentregisterComponent } from './student/studentregister/studentregis
 import { StudenthomeComponent } from './student/studenthome/studenthome.component';
 import {RouterModule } from '@angular/router';
 import {appRoutes } from './routes';
+import { SelectQuTypeComponent } from './student/select-qu-type/select-qu-type.component';
+import { SelectViewResourseComponent } from './student/select-view-resourse/select-view-resourse.component';
+
 
 
 @NgModule({
@@ -18,6 +21,8 @@ import {appRoutes } from './routes';
     StudentloginComponent,
     StudentregisterComponent,
     StudenthomeComponent,
+    SelectQuTypeComponent,
+    SelectViewResourseComponent,
     
   ],
   imports: [
@@ -25,6 +30,7 @@ import {appRoutes } from './routes';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
     RouterModule.forRoot(appRoutes)
    
   ],

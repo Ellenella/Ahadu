@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+
+<nav class="navbar   fixed-top navbar-expand-md bg-dark navbar-dark">
+  <img src="assets/logonew.png" style="width: 60px; height: 60px;"/>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link " href="#" >Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#" >Q & A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink= "/seresourse" >View Resource</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >logout</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+
+<div class="container-fluid text-center py-5 ">
+  <h2 id="parttwo" style="color: white; font-family: 'Bowlby One SC', Times, serif;">Select</h2>
+  <h3  style="color: white;font-family: 'Bowlby One SC', Times, serif;">Select your Grade and Also Select which subject and Unit do you want to take exam </h3>
+</div>
+
+
+<div class="col-md-6 offset-md-5" style="margin-left:350px">
+      <div class="card " id="cardtwo">
+        <div class="card-body">
+
+
+              <form>
+                <div class="form-group">
+                  <label for="email">Grade:</label>
+                  <br>
+                  <select  class="browser-default custom-select" name="grade" >
+                    <input type="text" placeholder="select your grade"/>
+                  
+                   <option *ngFor="let gd of  grade" [value]="gd.id">
+                     {{gd.id}}
+                   </option>
+                   
+                 </select>
+                 
+                </div>
+                <div class="form-group">
+                  <label for="email">Subject:</label>
+                  <br>
+                  <select  class="browser-default custom-select"  name="subject" >
+                  
+                   <option *ngFor="let sub of subject" [value]="sub.name">
+                     {{sub.name}}
+                   </option>
+                   
+                 </select>
+                 
+                </div>
+                
+               
+                <div class="form-group">
+                  <label for="email">Unit:</label>
+                  <br>
+                  <select  class="browser-default custom-select"  name="unit" >
+                  
+                   <option *ngFor="let unit of units" [value]="unit.id">
+                     {{unit.id}}
+                   </option>
+                   
+                 </select>
+                 
+                </div>
+             <!-- <button type="button" class="btn  text-center btn-sm px-5">submit</button>--> 
+            <input  style="background-color: #ffa800; width: 400px;margin-left: 100px;height: 40px;" type="submit"  value="Start">
+            </form>
+
+                
+        </div>
+       </div>
+    </div>
+<footer class="site-footer" style="margin-top: 100px;">
+<h4 class="text-center" style="font-family: 'Times New Roman', Times, serif;color: white;">2020 © Ministry of Science and Higher Education - All rights reserved.</h4>
+ 
+ 
+</footer>
+
+</body>
+</html>
+
+<script>
+  // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+$('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
+$(this).closest('.select-outline').find('label').toggleClass('active');
+$(this).closest('.select-outline').find('.caret').toggleClass('active');
+});
+});
+  </script>
