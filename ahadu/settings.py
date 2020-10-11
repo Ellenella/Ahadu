@@ -40,12 +40,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'authenticate',
-    'competition'
+    'competition',
+    'corsheaders',
 
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -110,6 +113,15 @@ AUTH_PASSWORD_VALIDATORS = [
 #     'django.contrib.auth.backends.ModelBackend',
 # )
 
+CORS_ALLOWED_ORIGINS = ['*']
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
