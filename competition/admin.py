@@ -4,6 +4,7 @@ from competition.models import *
 
 admin.site.register(Score)
 admin.site.register(Category)
+admin.site.register(Unit)
 admin.site.register(Choice)
 admin.site.register(Question)
 admin.site.register(QuestionTrack)

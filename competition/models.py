@@ -20,7 +20,7 @@ class Category(models.Model):
     grade = models.PositiveSmallIntegerField("Grade")
     
     def __str__(self): 
-        return self.name
+        return self.name + ' G-' + str(self.grade)
 
 class Unit(models.Model):
     category = models.ForeignKey(Category, verbose_name="catagories_unit", on_delete=models.CASCADE)
@@ -28,18 +28,23 @@ class Unit(models.Model):
     title = models.CharField("Unit title", max_length=100)
 
     def __str__(self):
-        return self.title + ' ' + self.number
+        return str(self.category) + ' Unit-'  +  str(self.number) + ' ' + self.title 
 
 class Choice(models.Model):
     choice = models.TextField("Choice")
     is_answer = models.BooleanField("Is Answer")
 
+    def __str__(self):
+        return self.choice
+
     
 class Question(models.Model):
     unit = models.ForeignKey(Unit, on_delete=models.SET_NULL, blank=True, null=True)
     description = models.TextField("Question")
-    choice = models.ManyToManyField(Choice)
+    choice = models.ManyToManyField(Choice, blank=True, verbose_name="Choice of Question", related_name="choice_option",)
     
+    def __str__(self):
+        return self.description
     
 class QuestionTrack(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
