@@ -56,7 +56,8 @@ export class SelectQuTypeComponent implements OnInit {
       { name: "Mathmatics"},
       { name: "History"},
       { name: "Geeze"},
-      { name: "Physical Excercise"}
+      { name: "Physical Excercise"},
+      {name : "It"}
   ]
 
   constructor() { }

@@ -6,6 +6,11 @@ import { StudenthomeComponent } from './student/studenthome/studenthome.componen
 import { SelectQuTypeComponent } from './student/select-qu-type/select-qu-type.component';
 import { SelectViewResourseComponent } from './student/select-view-resourse/select-view-resourse.component';
 
+import { ViewrComponent } from './student/viewr/viewr.component';
+import { ViewquestionComponent } from './student/viewquestion/viewquestion.component';
+
+
+
 
 
 export const appRoutes : Routes = [
@@ -30,7 +35,19 @@ export const appRoutes : Routes = [
             path : "seresourse" , component : SelectViewResourseComponent,
            // children : [{path : '' , component : RegistorComponent }]
         },
-    
+
+        {
+            path : "viewresourse" , component : ViewrComponent,
+           // children : [{path : '' , component : RegistorComponent }]
+        },
+        {
+            path : "viewquesion" , component : ViewquestionComponent,
+           // children : [{path : '' , component : RegistorComponent }]
+        },
+
+
+     
+      
     
 
     {

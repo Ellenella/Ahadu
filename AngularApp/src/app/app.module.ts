@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import  {  PdfViewerModule,PdfViewerComponent  }  from  'ng2-pdf-viewer';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentloginComponent } from './student/studentlogin/studentlogin.component';
@@ -12,6 +14,10 @@ import {RouterModule } from '@angular/router';
 import {appRoutes } from './routes';
 import { SelectQuTypeComponent } from './student/select-qu-type/select-qu-type.component';
 import { SelectViewResourseComponent } from './student/select-view-resourse/select-view-resourse.component';
+import { StudentViewComponent } from './student/student-view/student-view.component';
+import { ViewrComponent } from './student/viewr/viewr.component';
+import { ViewquestionComponent } from './student/viewquestion/viewquestion.component';
+
 
 
 
@@ -23,6 +29,9 @@ import { SelectViewResourseComponent } from './student/select-view-resourse/sele
     StudenthomeComponent,
     SelectQuTypeComponent,
     SelectViewResourseComponent,
+    StudentViewComponent,
+    ViewrComponent,
+    ViewquestionComponent,
     
   ],
   imports: [
@@ -30,11 +39,11 @@ import { SelectViewResourseComponent } from './student/select-view-resourse/sele
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    
+    PdfViewerModule,
     RouterModule.forRoot(appRoutes)
    
   ],
-  providers: [],
+  providers: [PdfViewerComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
