@@ -25,3 +25,19 @@ class QuestionView(APIView):
         question = kwargs['questionAnswer']
         for i in question:
             print(i)
+
+class CheckQuestion(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        question = kwargs['questionId']
+        answer = request.POST.get('answer')
+        question = Question.objects.get(id=question)
+        if question.choice.get(answer=answer).is_answer:
+            return Response({
+                'correct' : True
+            })
+        else:
+            return Response({
+                'correct' : False
+            })

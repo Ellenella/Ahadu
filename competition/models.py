@@ -32,7 +32,7 @@ class Unit(models.Model):
 
 class Choice(models.Model):
     choice = models.TextField("Choice")
-    is_answer = models.BooleanField("Is Answer")
+    is_answer = models.BooleanField("Is Answer", default=False)
 
     def __str__(self):
         return self.choice
